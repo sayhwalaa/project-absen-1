@@ -21,5 +21,6 @@ Route::get('/', function () {
 
 Auth::routes();
 Auth::logout();
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->middleware('Auth.login');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/logout', [LoginController::class, 'logout'])->middleware('Auth.login');
+Route::get('/loginKaryawan', [LoginController::class, 'karyawan']);

@@ -42,4 +42,9 @@ class LoginController extends Controller
     {
         Auth::logout();
     }
+
+    public function karyawan()
+    {
+        return view('auth.loginKaryawan');
+    }
 }

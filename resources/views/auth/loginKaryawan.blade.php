@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header"><b>{{ __('Login Admin') }}</b></div>
+                <div class="card-header"><b>{{ __('Login Karyawan') }}</b></div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
@@ -43,7 +43,7 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Login') }}
                                 </button><br><br>
-                                <a class="small text-decoration-none" href="/loginKaryawan">Login as Karyawan?</a>
+                                <a class="small text-decoration-none" href="/login">Login as Admin?</a>
                             </div>
                         </div>
                     </form>
