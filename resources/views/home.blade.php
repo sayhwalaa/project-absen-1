@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>SB Admin 2 - Blank</title>
+    <title>Absensi SDI</title>
     @include('Template.head')
 </head>
 
