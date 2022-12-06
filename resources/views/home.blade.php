@@ -1,8 +1,9 @@
+@include('sweetalert::alert')
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Absensi SDI</title>
+    <title>Sabang Digital Indonesia</title>
     @include('Template.head')
 </head>
 
@@ -29,7 +30,7 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Welcome, Rizky</h1>
+                    <h1 class="h3 mb-4 text-gray-800">Welcome, Admin</h1>
 
                 </div>
                 <!-- /.container-fluid -->
