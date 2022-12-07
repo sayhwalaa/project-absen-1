@@ -21,8 +21,8 @@ class PegawaiController extends Controller
         $validateData = $request->validate([
             'nip' => 'required|size:10|unique:pegawai',
             'nama' => 'required|min:1|max:50',
-            'tglLahir' => 'required|date',
-            'almat' => 'required',
+            'tglLahir' => 'required',
+            'alamat' => 'required',
             'noHp' => 'required',
             'jabatan' => 'required',
             'cabang' => 'required',
@@ -30,6 +30,6 @@ class PegawaiController extends Controller
         
         Pegawai::create($validateData);
         session()->flash('pesan',"Penambahan Data {$validateData['nama']} berhasil");
-        return redirect(route('pegawai.home'));
+        return redirect(route('pegawai.index'));
     }
 }

@@ -67,7 +67,9 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Pontianak',
+    'locale' => 'id',
+    'faker_locale' => 'id_ID',
 
     /*
     |--------------------------------------------------------------------------

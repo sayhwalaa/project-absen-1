@@ -32,6 +32,14 @@
                             </div>
 
                             <div class="mb-3">
+                                <label for="tglLahir" class="form-label">Tanggal Lahir</label>
+                                <input type="date" name="tglLahir" id="tglLahir" value="{{ old('tglLahir') }}" class="form-control @error('tglLahir') is-invalid @enderror">
+                                @error('tglLahir')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                            </div>
+
+                            <div class="mb-3">
                                 <label for="noHp" class="form-label">Nomor Hp</label>
                                 <input type="tel" name="noHp" id="noHp" value="{{ old('noHp') }}" class="form-control @error('noHp') is-invalid @enderror">
                                 @error('noHp')
