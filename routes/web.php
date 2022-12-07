@@ -33,8 +33,13 @@ Route::get('/pengguna', [PenggunaController::class, 'index'])->name('pengguna.in
 
 // Route Pegawai
 Route::get('/pegawai', [PegawaiController::class, 'index'])->name('pegawai.index');
+<<<<<<< HEAD
 Route::get('pegawai/tambah', [PegawaiController::class, 'tambahpegawai'])->name('tambahPegawai');
 Route::post('santri/simpan', [SantriController::class, 'simpanPegwai'])->name('simpanPegawai');
+=======
+Route::get('/pegawai/create', [PegawaiController::class,'create'])->name('pegawai.create');
+Route::post('/pegawai', [MahasiswaController::class,'store'])->name('pegawai.store');
+>>>>>>> 79d0450863eca7af36946d1c56ca5bd46e3cbd00
 
 
 /* MATA KULIAH */
