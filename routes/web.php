@@ -28,6 +28,9 @@ Route::get('/loginKaryawan', [LoginController::class, 'karyawan']);
 Route::get('/logout', [LoginController::class, 'logout'])->middleware('Auth.login');
 
 Route::get('/pegawai', [PegawaiController::class, 'index'])->name('pegawai.index');
+Route::get('/pegawai/create', [PegawaiController::class,'create'])->name('pegawai.create');
+Route::post('/pegawai', [MahasiswaController::class,'store'])->name('pegawai.store');
+
 
 /* MATA KULIAH */
 // Route::get('/pegawai', [PegawaiController::class, 'index'])->name('pegawai.index');

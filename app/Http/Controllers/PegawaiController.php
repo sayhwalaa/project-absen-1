@@ -22,23 +22,26 @@ class PegawaiController extends Controller
     // }
 
 
-    // public function create()
-    // {
-    //     return view('matakuliah.daftar');
-    // }
+    public function create(){
+        return view('pegawai.form-daftar');
+    }
 
 
-    // public function store(Request $request)
-    // {
-    // $validateData = $request->validate([
-    //     'kode'          => 'required|size:3|unique:mata_kuliahs',
-    //     'matakuliah'    => 'required|min:3|max:50',
-    //     'dosen'         => 'required',
-    // ]);
-
-    //     Matakuliah::create($validateData);
-    //     return redirect('matakuliahs')->with('success', 'Data berhasil ditambah!');
-    // }
+    public function store(Request $request){
+        $pegawai = Pegawai::create([
+            'nip' => $request->nip,
+            'nama' => $request->nama,
+            'tglLahir' => $request->tglLahir,
+            'alamat' => $request->alamat,
+            'noHp' => $request->noHp,
+            'jabatan' => $request->jabatan,
+            'cabang' => $request->cabang,
+        ]);
+        
+        Pegawai::create($validateData);
+        session()->flash('pesan',"Penambahan Data {$validateData['nama']} berhasil");
+        return redirect(route('pegawai.home'));
+    }
 
 
     // public function show($matakuliah)
