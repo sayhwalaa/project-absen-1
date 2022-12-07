@@ -30,9 +30,10 @@ Route::get('/logout', [LoginController::class, 'logout'])->middleware('Auth.logi
 
 // Route Pengguna
 Route::get('/pengguna', [PenggunaController::class, 'index'])->name('pengguna.index');
-Route::get('/pengguna/create', [PenggunaController::class, 'create'])->name('pengguna.create');
+Route::get('/pengguna/tambah', [PenggunaController::class,'tambahPengguna'])->name('pengguna.tambahPengguna');
+Route::post('/pengguna', [PenggunaController::class,'simpanPengguna'])->name('pengguna.simpanPengguna');;
 
 // Route Pegawai
 Route::get('/pegawai', [PegawaiController::class, 'index'])->name('pegawai.index');
-Route::get('/pegawai/tambah', [PegawaiController::class,'tambahPegawai'])->name('pegawai.tambahPegawai');;
-Route::post('/pegawai', [PegawaiController::class,'simpanPegawai'])->name('pegawai.simpanPegawai');;;
+Route::get('/pegawai/tambah', [PegawaiController::class,'tambahPegawai'])->name('pegawai.tambahPegawai');
+Route::post('/pegawai', [PegawaiController::class,'simpanPegawai'])->name('pegawai.simpanPegawai');

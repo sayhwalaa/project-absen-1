@@ -10,6 +10,6 @@ class pengguna extends Model
     use HasFactory;
     protected $table = 'pengguna';
     protected $primaryKey = 'nip';
-    protected $fillable = ['nama', 'alamat', 'email','jabatan'];
+    protected $fillable = ['nip', 'nama', 'email', 'tglLahir', 'alamat', 'noHp', 'jabatan'];
     protected $guarded = [];
 }

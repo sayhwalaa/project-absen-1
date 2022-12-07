@@ -31,7 +31,7 @@
         
             <!-- Page Heading -->
             <h1 class="h3 mb-3 text-gray-800">Data Pengguna</h1>
-            <a class="btn btn-primary mb-3"><i class="fa fa-plus"></i> Tambah Data</a>
+            <a class="btn btn-primary mb-3"  href="{{ route('pengguna.tambahPengguna') }}" class="fa fa-plus"></lass=> Tambah Data</a>
 
             <!-- DataTales Example -->
             <div class="card shadow mb-4">
