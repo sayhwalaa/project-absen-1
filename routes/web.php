@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PegawaiController;
+use App\Http\Controllers\PenggunaController;
 use App\Http\Controllers\Auth\LoginController;
 
 /*
@@ -27,7 +28,14 @@ Auth::logout();
 Route::get('/loginKaryawan', [LoginController::class, 'karyawan']);
 Route::get('/logout', [LoginController::class, 'logout'])->middleware('Auth.login');
 
+// Route Pengguna
+Route::get('/pengguna', [PenggunaController::class, 'index'])->name('pengguna.index');
+
+// Route Pegawai
 Route::get('/pegawai', [PegawaiController::class, 'index'])->name('pegawai.index');
+Route::get('pegawai/tambah', [PegawaiController::class, 'tambahpegawai'])->name('tambahPegawai');
+Route::post('santri/simpan', [SantriController::class, 'simpanPegwai'])->name('simpanPegawai');
+
 
 /* MATA KULIAH */
 // Route::get('/pegawai', [PegawaiController::class, 'index'])->name('pegawai.index');

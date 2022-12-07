@@ -30,13 +30,13 @@
         <div class="container-fluid">
         
             <!-- Page Heading -->
-            <h1 class="h3 mb-3 text-gray-800">Data Pegawai</h1>
+            <h1 class="h3 mb-3 text-gray-800">Data Pengguna</h1>
             <a class="btn btn-primary mb-3" href="{{route('tambahPegawai')}}"><i class="fa fa-plus"></i> Tambah Data</a>
 
             <!-- DataTales Example -->
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Data Pegawai Sabang Digital Indonesia</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Data Pengguna Sabang Digital Indonesia</h6>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -44,21 +44,19 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>NIP</th>
                                     <th>Nama</th>
+                                    <th>Email</th>
                                     <th>Jabatan</th>
-                                    <th>Cabang</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($pegawai as $index => $p) 
+                                @foreach($pengguna as $index => $p) 
                                 <tr>
                                     <td>{{$p->id}}</td>
-                                    <td>{{$p->nip}}</td>
                                     <td>{{$p->nama}}</td>
+                                    <td>{{$p->email}}</td>
                                     <td>{{$p->jabatan}}</td>
-                                    <td>{{$p->cabang}}</td>
                                     <td>
                                     <a href="#" class="btn btn-warning btn-circle">
                                         <i class="fa fa-edit"></i>

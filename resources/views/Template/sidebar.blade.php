@@ -35,7 +35,7 @@
         </a>
         <div id="collapseOne" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="#">Pengguna</a>
+                <a class="collapse-item" href="/pengguna">Pengguna</a>
                 <a class="collapse-item" href="/pegawai">Pegawai</a>
             </div>
         </div>
