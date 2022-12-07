@@ -30,23 +30,9 @@ Route::get('/logout', [LoginController::class, 'logout'])->middleware('Auth.logi
 
 // Route Pengguna
 Route::get('/pengguna', [PenggunaController::class, 'index'])->name('pengguna.index');
+Route::get('/pengguna/create', [PenggunaController::class, 'create'])->name('pengguna.create');
 
 // Route Pegawai
 Route::get('/pegawai', [PegawaiController::class, 'index'])->name('pegawai.index');
-<<<<<<< HEAD
-Route::get('pegawai/tambah', [PegawaiController::class, 'tambahpegawai'])->name('tambahPegawai');
-Route::post('santri/simpan', [SantriController::class, 'simpanPegwai'])->name('simpanPegawai');
-=======
-Route::get('/pegawai/create', [PegawaiController::class,'create'])->name('pegawai.create');
-Route::post('/pegawai', [MahasiswaController::class,'store'])->name('pegawai.store');
->>>>>>> 79d0450863eca7af36946d1c56ca5bd46e3cbd00
-
-
-/* MATA KULIAH */
-// Route::get('/pegawai', [PegawaiController::class, 'index'])->name('pegawai.index');
-// Route::get('/matakuliahs/create', [MataKuliahController::class, 'create'])->name('mata_kuliahs.create')->middleware('auth');
-// Route::post('/matakuliahs', [MataKuliahController::class, 'store'])->name('mata_kuliahs.store');
-// Route::get('/matakuliahs/{matakuliah}', [MataKuliahController::class, 'show'])->name('mata_kuliahs.show')->middleware('auth');
-// Route::get('/matakuliahs/{matakuliah}/edit', [MataKuliahController::class, 'edit'])->name('mata_kuliahs.edit')->middleware('auth');
-// Route::put('/matakuliahs/{matakuliah}', [MataKuliahController::class, 'update'])->name('mata_kuliahs.update');
-// Route::delete('/matakuliahs/{matakuliah}', [MataKuliahController::class, 'destroy'])->name('mata_kuliahs.destroy');
+Route::get('/pegawai/tambah', [PegawaiController::class,'tambahPegawai'])->name('pegawai.tambahPegawai');;
+Route::post('/pegawai', [PegawaiController::class,'simpanPegawai'])->name('pegawai.simpanPegawai');;;

@@ -13,7 +13,7 @@
             <div class="col-md-8 col-xl-6">
                 <h1>Pendaftaran Pegawai</h1>
                 <hr>
-                <form action="{{ route('pegawai.store'); }}" method="POST">
+                <form action="{{ route('pegawai.simpanPegawai'); }}" method="POST">
                         @csrf
                             <div class='mb-3'>
                                 <label for="nip" class="form-label">NIP</label>
@@ -53,7 +53,7 @@
                             </div>
 
                             <div class="mb-3">
-                                <label for="cabang" class="form-label">cabang</label>
+                                <label for="cabang" class="form-label">Cabang</label>
                                 <select name="cabang" id="cabang" class="form-select" value="{{ old('cabang') }}">
                                     <option value="Pontianak" {{ old('cabang')=='Pontianak' ? 'selected' : '' }}>Pontianak</option>
                                     <option value="Jakarta" {{ old('cabang')=='Jakarta' ? 'selected' : '' }}>Jakarta</option>
