@@ -27,8 +27,10 @@ Auth::logout();
 Route::get('/loginKaryawan', [LoginController::class, 'karyawan']);
 Route::get('/logout', [LoginController::class, 'logout'])->middleware('Auth.login');
 
-/* MATA KULIAH */
 Route::get('/pegawai', [PegawaiController::class, 'index'])->name('pegawai.index');
+
+/* MATA KULIAH */
+// Route::get('/pegawai', [PegawaiController::class, 'index'])->name('pegawai.index');
 // Route::get('/matakuliahs/create', [MataKuliahController::class, 'create'])->name('mata_kuliahs.create')->middleware('auth');
 // Route::post('/matakuliahs', [MataKuliahController::class, 'store'])->name('mata_kuliahs.store');
 // Route::get('/matakuliahs/{matakuliah}', [MataKuliahController::class, 'show'])->name('mata_kuliahs.show')->middleware('auth');

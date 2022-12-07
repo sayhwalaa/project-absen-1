@@ -42,6 +42,7 @@
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
+                                    <th>No</th>
                                     <th>NIP</th>
                                     <th>Nama</th>
                                     <th>Jabatan</th>
@@ -50,11 +51,13 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach($pegawai as $index => $p) 
                                 <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
+                                    <td>{{$p->id}}</td>
+                                    <td>{{$p->nip}}</td>
+                                    <td>{{$p->nama}}</td>
+                                    <td>{{$p->jabatan}}</td>
+                                    <td>{{$p->cabang}}</td>
                                     <td>
                                     <a href="#" class="btn btn-warning btn-circle">
                                         <i class="fa fa-edit"></i>
@@ -64,6 +67,7 @@
                                     </a>
                                     </td>
                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
