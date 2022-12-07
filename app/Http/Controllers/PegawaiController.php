@@ -33,4 +33,39 @@ class PegawaiController extends Controller
         session()->flash('pesan',"Penambahan Data {$validateData['nama']} berhasil");
         return redirect(route('pegawai.index'));
     }
+
+    public function editPegawai(Pegawai $pegawai)
+    {
+        return view('pegawai.edit',['pegawai' => $pegawai]);
+    }
+
+
+    public function ubahPegawai($id) {
+    $pegawai = Pegawai::select('*')
+        ->where('id', $id)
+        ->get();
+
+    return view('pegawai.edit', ['pegawai' => $pegawai]);
+    }
+
+    public function updatePegawai(Request $request) {
+    $pegawai = Pegawai::where('id', $request->id)
+        ->update([
+            'nip' => $request->nip,
+            'nama' => $request->nama,
+            'tglLahir' => $request->tglLahir,
+            'alamat' => $request->alamat,
+            'noHp' => $request->noHp,
+            'jabatan' => $request->jabatan,
+            'cabang' => $request->cabang,
+        ]);
+
+    return redirect()->route('pegawai.index');
+    }
+
+    public function destroy($id){
+        $pegawai = Pegawai::where('id', $id);
+        $pegawai->delete();
+        return redirect()->route('pegawai.index')->with('pesan',"Hapus Data $pegawai->nama Berhasil");
+    }
 }

@@ -37,3 +37,6 @@ Route::post('/pengguna', [PenggunaController::class,'simpanPengguna'])->name('pe
 Route::get('/pegawai', [PegawaiController::class, 'index'])->name('pegawai.index');
 Route::get('/pegawai/tambah', [PegawaiController::class,'tambahPegawai'])->name('pegawai.tambahPegawai');
 Route::post('/pegawai', [PegawaiController::class,'simpanPegawai'])->name('pegawai.simpanPegawai');
+Route::get('/pegawai/ubah/{id}', [PegawaiController::class, 'ubahPegawai'])->name('pegawai.editPegawai');
+Route::post('/pegawai/update', [PegawaiController::class, 'updatePegawai'])->name('pegawai.updatePegawai');
+// Route::get('/pegawai/delete/{id}', [PegawaiController::class, 'destroy']);
