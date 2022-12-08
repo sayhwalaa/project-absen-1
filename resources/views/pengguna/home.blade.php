@@ -51,19 +51,18 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @php
+                                 $no = 1;   
+                                @endphp
                                 @foreach($pengguna as $index => $p) 
                                 <tr>
-                                    <td>{{$p->id}}</td>
+                                    <td>{{$no++}}</td>
                                     <td>{{$p->nama}}</td>
                                     <td>{{$p->email}}</td>
                                     <td>{{$p->jabatan}}</td>
                                     <td>
-                                    <a href="#" class="btn btn-warning btn-circle">
-                                        <i class="fa fa-edit"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-danger btn-circle">
-                                        <i class="fas fa-trash"></i>
-                                    </a>
+                                        <a href="/pengguna/ubah/{{$p->id}}" class="btn btn-warning btn-circle"><i class="fa fa-edit"></i></a>
+                                        <a href="/pengguna/delete/{{$p->id}}" class="btn btn-danger btn-circle"><i class="fa fa-trash"></i></a>
                                     </td>
                                 </tr>
                                 @endforeach

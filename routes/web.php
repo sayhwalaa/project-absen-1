@@ -31,7 +31,10 @@ Route::get('/logout', [LoginController::class, 'logout'])->middleware('Auth.logi
 // Route Pengguna
 Route::get('/pengguna', [PenggunaController::class, 'index'])->name('pengguna.index');
 Route::get('/pengguna/tambah', [PenggunaController::class,'tambahPengguna'])->name('pengguna.tambahPengguna');
-Route::post('/pengguna', [PenggunaController::class,'simpanPengguna'])->name('pengguna.simpanPengguna');;
+Route::post('/pengguna', [PenggunaController::class,'simpanPengguna'])->name('pengguna.simpanPengguna');
+Route::get('/pengguna/ubah/{id}', [PenggunaController::class, 'ubahPengguna'])->name('pengguna.ubahPengguna');
+Route::post('/pengguna/update/{id}', [PenggunaController::class, 'updatePengguna'])->name('pengguna.updatePengguna');
+Route::get('/pengguna/delete/{id}', [PenggunaController::class, 'deletePengguna'])->name('pengguna.deletePengguna');
 
 // Route Pegawai
 Route::get('/pegawai', [PegawaiController::class, 'index'])->name('pegawai.index');
