@@ -60,17 +60,49 @@
                                     <td>{{$p->jabatan}}</td>
                                     <td>{{$p->cabang}}</td>
                                     <td>
-                                    <a href="#" class="btn btn-warning btn-circle">
-                                        <i class="fa fa-edit"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-danger btn-circle">
-                                        <i class="fas fa-trash"></i>
-                                    </a>
+                                        <a href="{{ url('pegawai/ubah') }}/{{ $p->id }}">
+                                            <button class="btn btn-info btn-sm btn-circle"><i class="fas fa-fw fa-edit"></i></button>
+                                        </a>
+                                        <a href="#" data-toggle="modal" data-target="#deleteModal-{{ $p->id }}">
+                                            <button class="btn btn-danger btn-sm btn-circle"><i class="fas fa-fw fa-trash"></i></button>
+                                        </a>
                                     </td>
                                 </tr>
                                 @endforeach
                             </tbody>
                         </table>
+                        @foreach($pegawai as $peg)
+                        <!-- Delete Modal-->
+                            <div class="modal fade" id="deleteModal-{{ $peg->id }}" aria-labelledby="exampleModalLabel{{ $peg->id }}" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel{{ $peg->id }}">Hapus pegawai?</h5>
+                                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <tr>
+                                    <td>NIP</td>
+                                    <td>:</td>
+                                    <td>{{ $peg->nip }}</td>
+                                    </tr>
+                                    <br>
+                                    <tr>
+                                    <td>Nama</td>
+                                    <td>:</td>
+                                    <td>{{ $peg->nama }}</td>
+                                    </tr>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
+                                    <a class="btn btn-danger" href="{{ url('pegawai/delete') }}/{{ $peg->id }}">Hapus</a>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
