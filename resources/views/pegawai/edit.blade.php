@@ -16,7 +16,7 @@
                 <h1 class="text-center">Edit Data Pegawai</h1>
                 <hr>
                 @foreach($pegawai as $p)
-                <form action="{{ route('pegawai.updatePegawai') }}" method="POST">
+                <form action="/pegawai/update/{{ $p->id }}" method="POST">
                     @csrf
                             <div class='mb-3'>
                                 <label for="nip" class="form-label">NIP</label>

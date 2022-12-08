@@ -66,6 +66,6 @@ class PegawaiController extends Controller
     public function destroy($id){
         $pegawai = Pegawai::where('id', $id);
         $pegawai->delete();
-        return redirect()->route('pegawai.index')->with('pesan',"Hapus Data $pegawai->nama Berhasil");
+        return redirect()->route('pegawai.index');
     }
 }

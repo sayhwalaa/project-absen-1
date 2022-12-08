@@ -62,12 +62,41 @@
                                     <td>{{$p->jabatan}}</td>
                                     <td>
                                         <a href="/pengguna/ubah/{{$p->id}}" class="btn btn-warning btn-circle"><i class="fa fa-edit"></i></a>
-                                        <a href="/pengguna/delete/{{$p->id}}" class="btn btn-danger btn-circle"><i class="fa fa-trash"></i></a>
+                                        <a href="#" data-toggle="modal" data-target="#deleteModal-{{ $p->id }}">
+                                            <button class="btn btn-danger btn-circle"><i class="fa fa-trash"></i></button>
+                                        </a>
                                     </td>
                                 </tr>
                                 @endforeach
                             </tbody>
                         </table>
+                        @foreach($pengguna as $p)
+                        <!-- Delete Modal-->
+                            <div class="modal fade" id="deleteModal-{{ $p->id }}" aria-labelledby="exampleModalLabel{{ $p->id }}" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel{{ $p->id }}">Hapus Data Pegawai</h5>
+                                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <tr>
+                                    <td>Yakin Menghapus</td>
+                                    <td>{{ $p->nama }}?</td>
+                                    </tr>
+                                    <br>
+                                    <tr>
+                                    
+                                </div>
+                                <div class="modal-footer">
+                                    <a class="btn btn-danger" href="/pengguna/delete/{{$p->id}}">Hapus</a>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

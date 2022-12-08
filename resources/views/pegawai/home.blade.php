@@ -64,10 +64,10 @@
                                     <td>{{$p->cabang}}</td>
                                     <td>
                                         <a href="{{ url('pegawai/ubah') }}/{{ $p->id }}">
-                                            <button class="btn btn-info btn-sm btn-circle"><i class="fas fa-fw fa-edit"></i></button>
+                                            <button class="btn btn-warning btn-circle"><i class="fa fa-edit"></i></button>
                                         </a>
                                         <a href="#" data-toggle="modal" data-target="#deleteModal-{{ $p->id }}">
-                                            <button class="btn btn-danger btn-sm btn-circle"><i class="fas fa-fw fa-trash"></i></button>
+                                            <button class="btn btn-danger btn-circle"><i class="fa fa-trash"></i></button>
                                         </a>
                                     </td>
                                 </tr>
@@ -80,23 +80,22 @@
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel{{ $peg->id }}">Hapus pegawai?</h5>
+                                    <h5 class="modal-title" id="exampleModalLabel{{ $peg->id }}">Hapus Data Pegawai</h5>
                                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">×</span>
                                     </button>
                                 </div>
                                 <div class="modal-body">
                                     <tr>
-                                    <td>NIP</td>
-                                    <td>:</td>
-                                    <td>{{ $peg->nip }}</td>
+                                    <td>Yakin Menghapus</td>
+                                    <td>{{ $peg->nama }}?</td>
                                     </tr>
                                     <br>
+                                    <tr>
                                     
                                 </div>
                                 <div class="modal-footer">
-                                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
-                                    <a class="btn btn-danger" href="{{ url('pegawai/delete') }}/{{ $peg->id }}">Hapus</a>
+                                    <a class="btn btn-danger" href="/pegawai/delete/{{$peg->id}}">Hapus</a>
                                 </div>
                                 </div>
                             </div>
