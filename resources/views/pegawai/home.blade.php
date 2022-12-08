@@ -51,10 +51,13 @@
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
+                            <?php
+                                $no = 1;
+                            ?>
                             <tbody>
                                 @foreach($pegawai as $index => $p) 
                                 <tr>
-                                    <td>{{$p->id}}</td>
+                                    <td>{{$no++}}</td>
                                     <td>{{$p->nip}}</td>
                                     <td>{{$p->nama}}</td>
                                     <td>{{$p->jabatan}}</td>
@@ -89,11 +92,7 @@
                                     <td>{{ $peg->nip }}</td>
                                     </tr>
                                     <br>
-                                    <tr>
-                                    <td>Nama</td>
-                                    <td>:</td>
-                                    <td>{{ $peg->nama }}</td>
-                                    </tr>
+                                    
                                 </div>
                                 <div class="modal-footer">
                                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
