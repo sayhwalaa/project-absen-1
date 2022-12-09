@@ -174,12 +174,11 @@
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            @foreach($pegawai as $index => $p)
-                                            <form action="/pengguna/update/{{ $p->id }}" method="POST">
+                                            <form action="/pegawai/update/{{ $p->id }}" method="POST">
                                                 @csrf
                                                 <div class="mb-3">Nip</label>
                                                     <input type="text" name="nip" id="nip"
-                                                        value="{{ old('nip') ?? $p->nip }}"
+                                                        value="{{old('nip') ?? $p->nip }}"
                                                         class="form-control @error('nip') is-invalid @enderror">
                                                     @error('nip')
                                                     <div class="text-danger">{{ $message }}</div>
@@ -197,6 +196,22 @@
                                                 </div>
 
                                                 <div class="mb-3">
+                                                    <label for="tglLahir" class="form-label">Tanggal Lahir</label>
+                                                    <input type="date" name="tglLahir" id="tglLahir" value="{{ $p->tglLahir }}" class="form-control @error('tglLahir') is-invalid @enderror">
+                                                    @error('tglLahir')
+                                                        <div class="text-danger">{{ $message }}</div>
+                                                        @enderror
+                                                </div>
+                    
+                                                <div class="mb-3">
+                                                    <label for="noHp" class="form-label">Nomor Hp</label>
+                                                    <input type="tel" name="noHp" id="noHp" value="{{ $p->noHp }}" class="form-control @error('noHp') is-invalid @enderror">
+                                                    @error('noHp')
+                                                        <div class="text-danger">{{ $message }}</div>
+                                                        @enderror
+                                                </div>
+
+                                                <div class="mb-3">
                                                     <label for="jabatan" class="form-label">Jabatan</label>
                                                     <input type="text" name="jabatan" id="jabatan"
                                                         value="{{ old('jabatan') ?? $p->jabatan }}"
@@ -204,6 +219,11 @@
                                                     @error('jabatan')
                                                     <div class="text-danger">{{ $message }}</div>
                                                     @enderror
+                                                </div>
+
+                                                <div class='mb-3'>
+                                                    <label for="alamat" class="form-label">Alamat</label>
+                                                    <textarea class="form-control" name="alamat" id="alamat" rows="3">{{ $p->alamat }}</textarea>
                                                 </div>
 
                                                 <div class="mb-3">
@@ -224,7 +244,6 @@
                                                     <a class="btn btn-success mb-2" href="{{ url()->previous() }}">Kembali</a>
                                                 </div>
                                             </form>
-                                            @endforeach
                                         </div>
                                     </div>
                                 </div>
