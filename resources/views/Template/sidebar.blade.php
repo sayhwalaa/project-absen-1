@@ -5,7 +5,7 @@
         <div class="sidebar-brand-icon">
             <i class="fas fa-user"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">Admin</div>
+        <div class="sidebar-brand-text mx-3">E-Absensi</div>
     </a>
 
     <!-- Divider -->
@@ -15,7 +15,8 @@
     <li class="nav-item">
         <a class="nav-link" href="/home">
             <i class="fas fa-fw fa-home"></i>
-            <span>Home</span></a>
+            <span>Home</span>
+        </a>
     </li>
 
     <!-- Divider -->

@@ -1,8 +1,8 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="">
-<meta name="author" content="">
+<meta name="description" content="absensi online">
+<meta name="author" content="mahasiswa politeknik negeri pontianak">
 <!-- Custom fonts for this template-->
 <link href="{{ asset('SBAdmin/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
 <link
@@ -11,3 +11,4 @@
 
 <!-- Custom styles for this template-->
 <link href="{{ asset ('SBAdmin/css/sb-admin-2.min.css') }}" rel="stylesheet">
+<link rel="shortcut icon" href="/sabang.png" type="png">

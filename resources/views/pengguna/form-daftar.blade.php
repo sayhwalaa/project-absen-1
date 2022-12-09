@@ -84,7 +84,7 @@
 
                             <button type="submit" class="btn btn-primary mb-2">Daftar</button>
                             <a href="{{ url()->previous() }}" class="btn btn-success">Kembali</a>
-                        </form>
+                </form>
             </div>
         </div>
     </div>
