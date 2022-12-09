@@ -241,7 +241,6 @@
                                                 </div>
                                                 <div>
                                                     <button type="submit" class="btn btn-primary mb-2">Update</button>
-                                                    <a class="btn btn-success mb-2" href="{{ url()->previous() }}">Kembali</a>
                                                 </div>
                                             </form>
                                         </div>
@@ -324,5 +323,3 @@
 </body>
 
 </html>
-
-{{-- @include('pegawai.form-daftar') --}}

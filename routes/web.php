@@ -18,15 +18,8 @@ use App\Http\Controllers\Auth\LoginController;
 */
 
 Route::get('/', function () {
-    return view('auth.login');
+    return view('home');
 });
-
-Route::get('/home', [HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-Auth::logout();
-Route::get('/loginKaryawan', [LoginController::class, 'karyawan']);
-Route::get('/logout', [LoginController::class, 'logout'])->middleware('Auth.login');
 
 // Route Pengguna
 Route::get('/pengguna', [PenggunaController::class, 'index'])->name('pengguna.index');
