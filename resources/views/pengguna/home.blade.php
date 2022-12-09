@@ -175,8 +175,8 @@
                                                         <i class="fa fa-edit"></i>
                                                     </button>
                                                 </a>
-                                                <a href="/pengguna/delete/{{$p->id}}" class="btn btn-danger btn-circle">
-                                                    <i class="fa fa-trash"></i>
+                                                <a href="#" data-toggle="modal" data-target="#deleteModal-{{ $p->id }}">
+                                                    <button class="btn btn-danger btn-circle"><i class="fa fa-trash"></i></button>
                                                 </a>
                                             </td>
                                         </tr>
@@ -194,7 +194,7 @@
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            {{-- @foreach($pengguna as $peng) --}}
+                                            @foreach($pengguna as $p)
                                             <form action="/pengguna/update/{{ $p->id }}" method="POST">
                                                 @csrf
                                                 <div class="mb-3">
@@ -233,7 +233,7 @@
                                                     <a class="btn btn-success mb-2" href="{{ url()->previous() }}">Kembali</a>
                                                 </div>
                                             </form>
-                                            {{-- @endforeach --}}
+                                            @endforeach
                                         </div>
                                     </div>
                                 </div>
@@ -241,6 +241,33 @@
                             {{-- end modal edit data --}}
                             </tbody>
                         </table>
+                        @foreach($pengguna as $peg)
+                        <!-- Delete Modal-->
+                            <div class="modal fade" id="deleteModal-{{ $peg->id }}" aria-labelledby="exampleModalLabel{{ $peg->id }}" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel{{ $peg->id }}">Konfirmasi hapus</h5>
+                                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <tr>
+                                    <td>Yakin Menghapus</td>
+                                    <td>{{ $peg->nama }}?</td>
+                                    </tr>
+                                    <br>
+                                    <tr>
+                                    
+                                </div>
+                                <div class="modal-footer">
+                                    <a class="btn btn-danger" href="/pegawai/delete/{{$peg->id}}">Hapus</a>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

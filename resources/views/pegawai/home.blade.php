@@ -148,15 +148,88 @@
                                     <td>{{$p->jabatan}}</td>
                                     <td>{{$p->cabang}}</td>
                                     <td>
-                                        <a href="{{ url('pegawai/ubah') }}/{{ $p->id }}">
-                                            <button class="btn btn-warning btn-circle"><i class="fa fa-edit"></i></button>
+                                        <a href="#" data-toggle="modal" class="btn btn-warning btn-circle"
+                                            data-target="#editModal" href="{{ url('pegawai/ubah') }}/{{ $p->id }}">
+                                            <button class="btn btn-warning btn-circle">
+                                                <i class="fa fa-edit"></i>
+                                            </button>
                                         </a>
                                         <a href="#" data-toggle="modal" data-target="#deleteModal-{{ $p->id }}">
                                             <button class="btn btn-danger btn-circle"><i class="fa fa-trash"></i></button>
                                         </a>
                                     </td>
                                 </tr>
+
                                 @endforeach
+                                {{-- modal edit data --}}
+                                <div class="modal fade" id="editModal" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-lg" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Edit Pegawai</h5>
+                                            <button class="close" type="button" data-dismiss="modal"
+                                                aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            @foreach($pegawai as $index => $p)
+                                            <form action="/pengguna/update/{{ $p->id }}" method="POST">
+                                                @csrf
+                                                <div class="mb-3">Nip</label>
+                                                    <input type="text" name="nip" id="nip"
+                                                        value="{{ old('nip') ?? $p->nip }}"
+                                                        class="form-control @error('nip') is-invalid @enderror">
+                                                    @error('nip')
+                                                    <div class="text-danger">{{ $message }}</div>
+                                                    @enderror
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label for="nama" class="form-label">Nama</label>
+                                                    <input type="nama" name="nama" id="nama"
+                                                        value="{{ old('nama') ?? $p->nama }}"
+                                                        class="form-control @error('nama') is-invalid @enderror">
+                                                    @error('nama')
+                                                    <div class="text-danger">{{ $message }}</div>
+                                                    @enderror
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label for="jabatan" class="form-label">Jabatan</label>
+                                                    <input type="text" name="jabatan" id="jabatan"
+                                                        value="{{ old('jabatan') ?? $p->jabatan }}"
+                                                        class="form-control @error('jabatan') is-invalid @enderror">
+                                                    @error('jabatan')
+                                                    <div class="text-danger">{{ $message }}</div>
+                                                    @enderror
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label for="cabang" class="form-label">Cabang</label>
+                                                    <select name="cabang" id="cabang" class="form-control">
+                                                        <option>{{ $p->cabang }}</option>
+                                                        <option value="Pontianak" {{ old('cabang')=='Pontianak' ? 'selected' : '' }}>Pontianak</option>
+                                                        <option value="Jakarta" {{ old('cabang')=='Jakarta' ? 'selected' : '' }}>Jakarta</option>
+                                                        <option value="Papua" {{ old('cabang')=='Papua' ? 'selected' : '' }}>Papua</option>
+                                                        <option value="Jawa Barat" {{ old('cabang')=='Jawa Barat' ? 'selected' : '' }}>Jawa Barat</option>
+                                                    </select>
+                                                    @error('cabang')
+                                                        <div class="text-danger">{{ $message }}</div>
+                                                    @enderror
+                                                </div>
+                                                <div>
+                                                    <button type="submit" class="btn btn-primary mb-2">Update</button>
+                                                    <a class="btn btn-success mb-2" href="{{ url()->previous() }}">Kembali</a>
+                                                </div>
+                                            </form>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{-- end modal edit data --}}
                             </tbody>
                         </table>
                         @foreach($pegawai as $peg)
@@ -165,7 +238,7 @@
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel{{ $peg->id }}">Hapus Data Pegawai</h5>
+                                    <h5 class="modal-title" id="exampleModalLabel{{ $peg->id }}">Konfirmasi hapus</h5>
                                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">×</span>
                                     </button>
