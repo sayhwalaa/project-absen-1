@@ -79,7 +79,6 @@
 
 
                             <button type="submit" class="btn btn-primary mb-2">Edit</button>
-                            <a href="{{ url()->previous() }}" class="btn btn-success">Kembali</a>
                         </form>
                 </form>
                 @endforeach
