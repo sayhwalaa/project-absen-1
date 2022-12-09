@@ -53,9 +53,6 @@ class PegawaiController extends Controller
         ->update([
             'nip' => $request->nip,
             'nama' => $request->nama,
-            'tglLahir' => $request->tglLahir,
-            'alamat' => $request->alamat,
-            'noHp' => $request->noHp,
             'jabatan' => $request->jabatan,
             'cabang' => $request->cabang,
         ]);

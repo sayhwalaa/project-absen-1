@@ -108,7 +108,6 @@
                                 
                                 <div>
                                     <button type="submit" class="btn btn-primary mb-2">Daftar</button>
-                                    <a class="btn btn-success mb-2"  href="{{ url()->previous() }}">Kembali</a>
                                 </div>
                         </form>
                     </div>
@@ -149,11 +148,11 @@
                                     <td>{{$p->cabang}}</td>
                                     <td>
                                         <a href="#" data-toggle="modal" class="btn btn-warning btn-circle"
-                                            data-target="#editModal" href="{{ url('pegawai/ubah') }}/{{ $p->id }}">
-                                            <button class="btn btn-warning btn-circle">
-                                                <i class="fa fa-edit"></i>
-                                            </button>
-                                        </a>
+                                        data-target="#editModal-{{$p->id}}">
+                                        <button class="btn btn-warning btn-circle">
+                                            <i class="fa fa-edit"></i>
+                                        </button>
+                                    </a>
                                         <a href="#" data-toggle="modal" data-target="#deleteModal-{{ $p->id }}">
                                             <button class="btn btn-danger btn-circle"><i class="fa fa-trash"></i></button>
                                         </a>
@@ -162,93 +161,83 @@
 
                                 @endforeach
                                 {{-- modal edit data --}}
-                                <div class="modal fade" id="editModal" aria-labelledby="exampleModalLabel"
-                                aria-hidden="true">
-                                <div class="modal-dialog modal-lg" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Edit Pegawai</h5>
-                                            <button class="close" type="button" data-dismiss="modal"
-                                                aria-label="Close">
-                                                <span aria-hidden="true">×</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form action="/pegawai/update/{{ $p->id }}" method="POST">
-                                                @csrf
-                                                <div class="mb-3">Nip</label>
-                                                    <input type="text" name="nip" id="nip"
-                                                        value="{{old('nip') ?? $p->nip }}"
-                                                        class="form-control @error('nip') is-invalid @enderror">
-                                                    @error('nip')
-                                                    <div class="text-danger">{{ $message }}</div>
-                                                    @enderror
-                                                </div>
+                            @foreach($pegawai as $p)
+                            <div class="modal fade" id="editModal-{{$p->id}}" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Edit Pegawai</h5>
+                                        <button class="close" type="button" data-dismiss="modal"
+                                            aria-label="Close">
+                                            <span aria-hidden="true">×</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form action="/pegawai/update/{{ $p->id }}" method="POST">
+                                            @csrf
+                                            <div class="mb-3">
+                                                <label for="nip" class="form-label">Nip
+                                                    </label>
+                                                <input type="text" name="nip" id="nip"
+                                                    value="{{ old('nip') ?? $p->nip }}"
+                                                    class="form-control @error('nip') is-invalid @enderror">
+                                                @error('nip')
+                                                <div class="text-danger">{{ $message }}</div>
+                                                @enderror
+                                            </div>
 
-                                                <div class="mb-3">
-                                                    <label for="nama" class="form-label">Nama</label>
-                                                    <input type="nama" name="nama" id="nama"
-                                                        value="{{ old('nama') ?? $p->nama }}"
-                                                        class="form-control @error('nama') is-invalid @enderror">
-                                                    @error('nama')
-                                                    <div class="text-danger">{{ $message }}</div>
-                                                    @enderror
-                                                </div>
+                                            <div class="mb-3">
+                                                <label for="nama" class="form-label">Nama</label>
+                                                <input type="nama" name="nama" id="nama"
+                                                    value="{{ old('nama') ?? $p->nama }}"
+                                                    class="form-control @error('nama') is-invalid @enderror">
+                                                @error('nama')
+                                                <div class="text-danger">{{ $message }}</div>
+                                                @enderror
+                                            </div>
 
-                                                <div class="mb-3">
-                                                    <label for="tglLahir" class="form-label">Tanggal Lahir</label>
-                                                    <input type="date" name="tglLahir" id="tglLahir" value="{{ $p->tglLahir }}" class="form-control @error('tglLahir') is-invalid @enderror">
-                                                    @error('tglLahir')
-                                                        <div class="text-danger">{{ $message }}</div>
-                                                        @enderror
-                                                </div>
-                    
-                                                <div class="mb-3">
-                                                    <label for="noHp" class="form-label">Nomor Hp</label>
-                                                    <input type="tel" name="noHp" id="noHp" value="{{ $p->noHp }}" class="form-control @error('noHp') is-invalid @enderror">
-                                                    @error('noHp')
-                                                        <div class="text-danger">{{ $message }}</div>
-                                                        @enderror
-                                                </div>
+                                            <div class="mb-3">
+                                                <label for="jabatan" class="form-label">Jabatan</label>
+                                                <input type="text" name="jabatan" id="jabatan"
+                                                    value="{{ old('jabatan') ?? $p->jabatan }}"
+                                                    class="form-control @error('jabatan') is-invalid @enderror">
+                                                @error('jabatan')
+                                                <div class="text-danger">{{ $message }}</div>
+                                                @enderror
+                                            </div>
 
-                                                <div class="mb-3">
-                                                    <label for="jabatan" class="form-label">Jabatan</label>
-                                                    <input type="text" name="jabatan" id="jabatan"
-                                                        value="{{ old('jabatan') ?? $p->jabatan }}"
-                                                        class="form-control @error('jabatan') is-invalid @enderror">
-                                                    @error('jabatan')
-                                                    <div class="text-danger">{{ $message }}</div>
-                                                    @enderror
-                                                </div>
+                                            <div class="mb-3">
+                                                <label for="cabang" class="form-label">Cabang</label>
+                                                <select name="cabang" id="cabang" class="form-control"
+                                                    value="{{ old('cabang') }}">
+                                                    <option>{{ $p->cabang }}</option>
+                                                    <option value="Pontianak"
+                                                        {{ old('cabang')=='Pontianak' ? 'selected' : '' }}>Pontianak
+                                                    </option>
+                                                    <option value="Jakarta"
+                                                        {{ old('cabang')=='Jakarta' ? 'selected' : '' }}>Jakarta</option>
+                                                    <option value="Papua" {{ old('cabang')=='Papua' ? 'selected' : '' }}>
+                                                        Papua</option>
+                                                    <option value="Jawa Barat"
+                                                        {{ old('cabang')=='Jawa Barat' ? 'selected' : '' }}>Jawa Barat
+                                                    </option>
+                                                </select>
+                                                @error('cabang')
+                                                <div class="text-danger">{{ $message }}</div>
+                                                @enderror
+                                            </div>
 
-                                                <div class='mb-3'>
-                                                    <label for="alamat" class="form-label">Alamat</label>
-                                                    <textarea class="form-control" name="alamat" id="alamat" rows="3">{{ $p->alamat }}</textarea>
-                                                </div>
-
-                                                <div class="mb-3">
-                                                    <label for="cabang" class="form-label">Cabang</label>
-                                                    <select name="cabang" id="cabang" class="form-control">
-                                                        <option>{{ $p->cabang }}</option>
-                                                        <option value="Pontianak" {{ old('cabang')=='Pontianak' ? 'selected' : '' }}>Pontianak</option>
-                                                        <option value="Jakarta" {{ old('cabang')=='Jakarta' ? 'selected' : '' }}>Jakarta</option>
-                                                        <option value="Papua" {{ old('cabang')=='Papua' ? 'selected' : '' }}>Papua</option>
-                                                        <option value="Jawa Barat" {{ old('cabang')=='Jawa Barat' ? 'selected' : '' }}>Jawa Barat</option>
-                                                    </select>
-                                                    @error('cabang')
-                                                        <div class="text-danger">{{ $message }}</div>
-                                                    @enderror
-                                                </div>
-                                                <div>
-                                                    <button type="submit" class="btn btn-primary mb-2">Update</button>
-                                                    <a class="btn btn-success mb-2" href="{{ url()->previous() }}">Kembali</a>
-                                                </div>
-                                            </form>
-                                        </div>
+                                            <div>
+                                                <button type="submit" class="btn btn-primary mb-2">Update</button>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
-                            {{-- end modal edit data --}}
+                        </div>
+                        @endforeach
+                        {{-- end modal edit data --}}
                             </tbody>
                         </table>
                         @foreach($pegawai as $peg)
