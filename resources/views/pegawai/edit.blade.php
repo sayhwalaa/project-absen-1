@@ -66,6 +66,7 @@
                             <div class="mb-3">
                                 <label for="cabang" class="form-label">Cabang</label>
                                 <select name="cabang" id="cabang" class="form-select" value="{{ $p->cabang }}">
+                                    <option>-- Pilih Cabang --</option>
                                     <option value="Pontianak" {{ old('cabang')=='Pontianak' ? 'selected' : '' }}>Pontianak</option>
                                     <option value="Jakarta" {{ old('cabang')=='Jakarta' ? 'selected' : '' }}>Jakarta</option>
                                     <option value="Papua" {{ old('cabang')=='Papua' ? 'selected' : '' }}>Papua</option>
