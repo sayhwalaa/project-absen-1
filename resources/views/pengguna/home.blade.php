@@ -63,7 +63,7 @@
                                     <td>
                                         <a href="/pengguna/ubah/{{$p->id}}" class="btn btn-warning btn-circle"><i class="fa fa-edit"></i></a>
                                         <a href="#" data-toggle="modal" data-target="#deleteModal-{{ $p->id }}">
-                                            <button class="btn btn-danger btn-circle"><i class="fa fa-trash"></i></button>
+                                        <button class="btn btn-danger btn-circle"><i class="fa fa-trash"></i></button>
                                         </a>
                                     </td>
                                 </tr>
