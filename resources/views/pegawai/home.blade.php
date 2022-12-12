@@ -228,36 +228,10 @@
                                                 @enderror
                                             </div>
 
-<<<<<<< HEAD
-                                                <div class='mb-3'>
-                                                    <label for="alamat" class="form-label">Alamat</label>
-                                                    <textarea class="form-control" name="alamat" id="alamat" rows="3">{{ $p->alamat }}</textarea>
-                                                </div>
-
-                                                <div class="mb-3">
-                                                    <label for="cabang" class="form-label">Cabang</label>
-                                                    <select name="cabang" id="cabang" class="form-control">
-                                                        <option>{{ $p->cabang }}</option>
-                                                        <option value="Pontianak" {{ old('cabang')=='Pontianak' ? 'selected' : '' }}>Pontianak</option>
-                                                        <option value="Jakarta" {{ old('cabang')=='Jakarta' ? 'selected' : '' }}>Jakarta</option>
-                                                        <option value="Papua" {{ old('cabang')=='Papua' ? 'selected' : '' }}>Papua</option>
-                                                        <option value="Jawa Barat" {{ old('cabang')=='Jawa Barat' ? 'selected' : '' }}>Jawa Barat</option>
-                                                    </select>
-                                                    @error('cabang')
-                                                        <div class="text-danger">{{ $message }}</div>
-                                                    @enderror
-                                                </div>
-                                                <div>
-                                                    <button type="submit" class="btn btn-primary mb-2">Update</button>
-                                                </div>
-                                            </form>
-                                        </div>
-=======
                                             <div>
                                                 <button type="submit" class="btn btn-primary mb-2">Update</button>
                                             </div>
                                         </form>
->>>>>>> 875369014d9fb2095b00606a4f3ef511c23e219d
                                     </div>
                                 </div>
                             </div>
@@ -330,7 +304,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="/login">Logout</a>
+                    <a class="btn btn-primary" href="/">Logout</a>
                 </div>
             </div>
         </div>
