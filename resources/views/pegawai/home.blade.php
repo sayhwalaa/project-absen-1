@@ -252,6 +252,7 @@
                                                 @enderror
                                             </div>
 
+<<<<<<< HEAD
                                                 <div class='mb-3'>
                                                     <label for="alamat" class="form-label">Alamat</label>
                                                     <textarea class="form-control" name="alamat" id="alamat" rows="3">{{ $p->alamat }}</textarea>
@@ -275,6 +276,12 @@
                                                 </div>
                                             </form>
                                         </div>
+=======
+                                            <div>
+                                                <button type="submit" class="btn btn-primary mb-2">Update</button>
+                                            </div>
+                                        </form>
+>>>>>>> e7040688bac799efa4b833a6571441a80f50f234
                                     </div>
                                 </div>
                             </div>
@@ -347,7 +354,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="/login">Logout</a>
+                    <a class="btn btn-primary" href="/">Logout</a>
                 </div>
             </div>
         </div>
