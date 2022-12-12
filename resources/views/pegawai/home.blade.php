@@ -6,6 +6,24 @@
     @include('Template.head')
 </head>
 
+<style>
+    .page {
+        display: flex;
+        left: 200px;
+        position: relative;
+    }
+    svg {
+        width: 25px;
+        left: 200px;
+    }
+    p{
+        margin-top: 10px;
+    }
+    span {
+        width: 50px;
+    }
+</style>
+
 
 <body id="page-top">
 
@@ -18,13 +36,13 @@
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
-
             <!-- Main Content -->
             <div id="content">
 
                 <!-- Topbar -->
                 @include('Template.navbar')
                 <!-- End of Topbar -->
+
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
@@ -158,8 +176,14 @@
                                         </a>
                                     </td>
                                 </tr>
-
-                                @endforeach
+                                </tbody>
+                            @endforeach
+                        </table>
+                    </div>
+                </div>
+                        <div class="container flex-row">
+                            {!! $pegawai->appends(Request::except('page'))->render() !!}
+                        </div>
                                 {{-- modal edit data --}}
                             @foreach($pegawai as $p)
                             <div class="modal fade" id="editModal-{{$p->id}}" aria-labelledby="exampleModalLabel"
@@ -228,7 +252,6 @@
                                                 @enderror
                                             </div>
 
-<<<<<<< HEAD
                                                 <div class='mb-3'>
                                                     <label for="alamat" class="form-label">Alamat</label>
                                                     <textarea class="form-control" name="alamat" id="alamat" rows="3">{{ $p->alamat }}</textarea>
@@ -252,12 +275,6 @@
                                                 </div>
                                             </form>
                                         </div>
-=======
-                                            <div>
-                                                <button type="submit" class="btn btn-primary mb-2">Update</button>
-                                            </div>
-                                        </form>
->>>>>>> 875369014d9fb2095b00606a4f3ef511c23e219d
                                     </div>
                                 </div>
                             </div>

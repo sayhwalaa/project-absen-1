@@ -6,10 +6,12 @@ use App\Models\Pegawai;
 
 class PegawaiController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
         $pegawai = Pegawai::select('*')
         ->get();
-        return view('pegawai.home', ['pegawai' => $pegawai]);
+        $search = $request->seacrh;
+        
+        return view('pegawai.home', ['pegawai' => $pegawai->paginate(5)]);
     }
 
     

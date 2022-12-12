@@ -181,37 +181,6 @@
                                         </tr>
                                 @endforeach
 
-<<<<<<< HEAD
-                                                            <div class="mb-3">
-                                                                <label for="email" class="form-label">Email</label>
-                                                                <input type="email" name="email" id="email"
-                                                                    value="{{ old('email') ?? $p->email }}"
-                                                                    class="form-control @error('email') is-invalid @enderror">
-                                                                @error('email')
-                                                                <div class="text-danger">{{ $message }}</div>
-                                                                @enderror
-                                                            </div>
-
-                                                            <div class="mb-3">
-                                                                <label for="jabatan" class="form-label">Jabatan</label>
-                                                                <input type="text" name="jabatan" id="jabatan"
-                                                                    value="{{ old('jabatan') ?? $p->jabatan }}"
-                                                                    class="form-control @error('jabatan') is-invalid @enderror">
-                                                                @error('jabatan')
-                                                                <div class="text-danger">{{ $message }}</div>
-                                                                @enderror
-                                                            </div>
-
-                                                            <div>
-                                                                <button type="submit"
-                                                                    class="btn btn-primary mb-2">Update</button>
-                                                            </div>
-                                                        </form>
-                                                        @endforeach
-                                                    </div>
-                                                </div>
-                                            </div>
-=======
                                 {{-- modal edit data --}}
                                @foreach($pengguna as $p)
                                 <div class="modal fade" id="editModal-{{$p->id}}" aria-labelledby="exampleModalLabel"
@@ -224,7 +193,6 @@
                                                 aria-label="Close">
                                                 <span aria-hidden="true">×</span>
                                             </button>
->>>>>>> 875369014d9fb2095b00606a4f3ef511c23e219d
                                         </div>
                                         <div class="modal-body">
                                             <form action="/pengguna/update/{{ $p->id }}" method="POST">
