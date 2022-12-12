@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class AuthController extends Controller
@@ -18,10 +18,11 @@ class AuthController extends Controller
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
+        // dd($credentials);
 
         if (Auth::attempt($credentials)) {
             request()->session()->regenerate();
-            return redirect('/home')->intended('absensi')->with('success', 'Berhasil Login');
+            return redirect()->intended('home')->with('success', 'Berhasil Login');
         }
 
         return back()->with('pesan', 'Email atau Password Salah')->onlyInput('email');

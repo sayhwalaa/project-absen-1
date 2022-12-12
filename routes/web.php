@@ -1,27 +1,19 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\PenggunaController;
 use App\Http\Controllers\AuthController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/', function () {
     return view('index');
 });
 
+
 // Route Pengguna
+Route::get('/home', [HomeController::class, 'index'])->name('home.index')->middleware('auth');
 Route::get('/pengguna', [PenggunaController::class, 'index'])->name('pengguna.index')->middleware('auth');
 Route::get('/pengguna/tambah', [PenggunaController::class,'tambahPengguna'])->name('pengguna.tambahPengguna')->middleware('auth');
 Route::post('/pengguna', [PenggunaController::class,'simpanPengguna'])->name('pengguna.simpanPengguna');
@@ -38,6 +30,6 @@ Route::post('/pegawai/update/{id}', [PegawaiController::class, 'updatePegawai'])
 Route::get('/pegawai/delete/{id}', [PegawaiController::class, 'destroy']);
 
 // AUTH
-Route::get('/login', [AuthController::class, 'index'])->name('index')->middleware('guest');
-Route::post('/login', [AuthController::class, 'login'])->name('login');
+Route::get('/login', [AuthController::class, 'index'])->name('index')->middleware('auth');
+Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
