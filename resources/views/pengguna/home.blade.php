@@ -265,7 +265,7 @@
 
                                             </div>
                                             <div class="modal-footer">
-                                                <a class="btn btn-danger" href="/pegawai/delete/{{$peg->id}}">Hapus</a>
+                                                <a class="btn btn-danger" href="/pengguna/delete/{{$peg->id}}">Hapus</a>
                                             </div>
                                         </div>
                                     </div>
