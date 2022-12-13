@@ -11,8 +11,8 @@ class AuthController extends Controller
         return view('index');
     }
 
-
-    public function login()
+    
+    public function login(Request $request)
     {
         $credentials = request()->validate([
             'email' => ['required', 'email'],
@@ -25,7 +25,7 @@ class AuthController extends Controller
             return redirect()->intended('home')->with('success', 'Berhasil Login');
         }
 
-        return back()->with('pesan', 'Email atau Password Salah')->onlyInput('email');
+        return back()->with('error', 'Email atau Password Salah')->onlyInput('email');
     }
 
     

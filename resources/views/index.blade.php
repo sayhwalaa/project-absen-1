@@ -20,7 +20,8 @@
         <div class="container" style="margin-top: 7%">
             <div class="d-flex justify-content-center">
                 <div class="col-md-6">
-                    <img src="{{ asset('/SBAdmin/login/img/sabang.png') }}" alt="Image" class="img-fluid" style="margin-top: 90px;" />
+                    <img src="{{ asset('/SBAdmin/login/img/sabang.png') }}" alt="Image" class="img-fluid"
+                        style="margin-top: 90px;" />
                 </div>
                 <div class="col-md-6 contents">
                     <div class="row justify-content-center align-middle">
@@ -38,13 +39,15 @@
                                 @csrf
                                 <div class="form-group first mb-3">
                                     <label for="email">Email</label>
-                                    <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email" value="{{ old('email') }}" />
+                                    <input type="email" name="email"
+                                        class="form-control @error('email') is-invalid @enderror" id="email"
+                                        value="{{ old('email') }}" />
                                 </div>
                                 <div class="form-group last mb-4">
                                     <label for="password">Password</label>
                                     <input type="password" name="password" class="form-control" id="password" />
                                 </div>
-                                    <button type="submit" class="btn btn-primary w-100">Login</button>
+                                <button type="submit" class="btn btn-primary w-100">Login</button>
                             </form>
                         </div>
                     </div>
