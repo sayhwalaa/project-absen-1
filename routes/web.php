@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\PenggunaController;
+use App\Http\Controllers\LinkController;
 use App\Http\Controllers\AuthController;
 
 // Route::get('/', function () {
@@ -38,3 +39,5 @@ Route::get('/pegawai/delete/{id}', [PegawaiController::class, 'destroy']);
 Route::get('/', [AuthController::class, 'index'])->name('login.index');
 Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
 Route::post('/logout', [AuthController::class, 'logout'])->name('auth.logout');
+
+Route::get('/coba/{nama}', [LinkController::class, 'index'])->name('link.index');
