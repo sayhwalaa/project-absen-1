@@ -22,9 +22,9 @@ class DatabaseSeeder extends Seeder
 
         //seeder user
         User::create([
-            'name' => 'Syahwala Putri Adetya',
-            'email' => 'syahwalaputriadetya@gmail.com',
-            'password' => bcrypt('Syahwala_123')
+            'name' => 'Sabang Digital Indonesia',
+            'email' => 'sdi@gmail.com',
+            'password' => bcrypt('sdi123')
 
         ]);
 
