@@ -4,6 +4,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png" />
     <link rel="icon" type="image/png" href="/sabang.png" />
     <title>Sabang Digital Indonesia</title>
+    
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
     <!-- Font Awesome Icons -->
@@ -15,4 +16,6 @@
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <!-- Main Styling -->
     <link href="../assets/css/argon-dashboard-tailwind.css?v=1.0.1" rel="stylesheet" />
+<!-- Bootstrap -->
+    {{-- <link rel="stylesheet" href="{{ asset('/bootstrap/css/bootstrap.min.css') }}"> --}}
 </head>
