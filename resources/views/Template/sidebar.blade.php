@@ -3,8 +3,9 @@
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/home">
         <div class="sidebar-brand-icon">
-            <i class="fas fa-user"></i>
+            <i class="fas fa-calendar-check"></i>
         </div>
+        
         <div class="sidebar-brand-text mx-3">E-Absensi</div>
     </a>
 
