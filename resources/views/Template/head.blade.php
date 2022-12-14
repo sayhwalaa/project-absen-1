@@ -11,4 +11,4 @@
 
 <!-- Custom styles for this template-->
 <link href="{{ asset ('SBAdmin/css/sb-admin-2.min.css') }}" rel="stylesheet">
-<link rel="shortcut icon" href="/sabang.png" type="png">
+<link rel="shortcut icon" href="sabang.png" type="png">

@@ -8,10 +8,9 @@ class PegawaiController extends Controller
 {
     public function index(Request $request){
         $pegawai = Pegawai::select('*')
-        ->get();
-        $search = $request->seacrh;
+        ->paginate(5);
         
-        return view('pegawai.home', ['pegawai' => $pegawai->paginate(5)]);
+        return view('pegawai.home', ['pegawai' => $pegawai]);
     }
 
     

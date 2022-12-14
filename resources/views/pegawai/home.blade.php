@@ -7,20 +7,15 @@
 </head>
 
 <style>
-    .page {
-        display: flex;
-        left: 200px;
-        position: relative;
-    }
-    svg {
-        width: 25px;
-        left: 200px;
-    }
     p{
         margin-top: 10px;
     }
     span {
         width: 50px;
+    }
+    .page{
+        margin-top: 25px;
+        margin-left: 1000px;
     }
 </style>
 
@@ -48,7 +43,6 @@
         <div class="container-fluid">
         
             <!-- Page Heading -->
-            <h1 class="h3 mb-3 text-gray-800">Data Pegawai</h1>
             <a href="#" data-toggle="modal" data-target="#tambahModal">
                 <button class="btn btn-primary mb-3">Tambah Data</button>
             </a>
@@ -142,7 +136,7 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table table-striped" id="dataTable" width="100%" cellspacing="0">
+                        <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
                             <thead class="border-top-color">
                                 <tr>
                                     <th>No</th>
@@ -157,9 +151,9 @@
                                 $no = 1;
                             ?>
                             <tbody>
-                                @foreach($pegawai as $index => $p) 
+                                @foreach($pegawai as $key => $p) 
                                 <tr>
-                                    <td>{{$no++}}</td>
+                                    <td>{{$pegawai->firstItem()+$key}}</td>
                                     <td>{{$p->nip}}</td>
                                     <td>{{$p->nama}}</td>
                                     <td>{{$p->jabatan}}</td>
@@ -179,12 +173,13 @@
                                 </tbody>
                             @endforeach
                         </table>
+                        <div class="page">
+                            {{$pegawai->links()}}
+                        </div>
                     </div>
                 </div>
-                        <div class="container flex-row">
-                            {!! $pegawai->appends(Request::except('page'))->render() !!}
-                        </div>
-                                {{-- modal edit data --}}
+            </div>
+                            {{-- modal edit data --}}
                             @foreach($pegawai as $p)
                             <div class="modal fade" id="editModal-{{$p->id}}" aria-labelledby="exampleModalLabel"
                             aria-hidden="true">
@@ -252,7 +247,6 @@
                                                 @enderror
                                             </div>
 
-<<<<<<< HEAD
                                                 <div class='mb-3'>
                                                     <label for="alamat" class="form-label">Alamat</label>
                                                     <textarea class="form-control" name="alamat" id="alamat" rows="3">{{ $p->alamat }}</textarea>
@@ -276,12 +270,6 @@
                                                 </div>
                                             </form>
                                         </div>
-=======
-                                            <div>
-                                                <button type="submit" class="btn btn-primary mb-2">Update</button>
-                                            </div>
-                                        </form>
->>>>>>> e7040688bac799efa4b833a6571441a80f50f234
                                     </div>
                                 </div>
                             </div>
@@ -354,7 +342,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="/">Logout</a>
+                    <a class="btn btn-primary" href="/login">Logout</a>
                 </div>
             </div>
         </div>

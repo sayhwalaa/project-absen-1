@@ -209,20 +209,6 @@
                                                                 @enderror
                                                             </div>
 
-<<<<<<< HEAD
-                                {{-- modal edit data --}}
-                               @foreach($pengguna as $p)
-                                <div class="modal fade" id="editModal-{{$p->id}}" aria-labelledby="exampleModalLabel"
-                                aria-hidden="true">
-                                <div class="modal-dialog modal-lg" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Edit Pegawai</h5>
-                                            <button class="close" type="button" data-dismiss="modal"
-                                                aria-label="Close">
-                                                <span aria-hidden="true">×</span>
-                                            </button>
-=======
                                                             <div class="mb-3">
                                                                 <label for="email" class="form-label">Email</label>
                                                                 <input type="email" name="email" id="email"
@@ -250,7 +236,6 @@
                                                     </div>
                                                 </div>
                                             </div>
->>>>>>> e7040688bac799efa4b833a6571441a80f50f234
                                         </div>
                                         @endforeach
                                         {{-- end modal edit data --}}
