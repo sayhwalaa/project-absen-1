@@ -1,14 +1,12 @@
-<footer class="pt-4">
-    <div class="w-full px-6 mx-auto">
-        <div class="flex flex-wrap items-center -mx-3 lg:justify-between">
-            <div class="w-full max-w-full px-3 mt-0 mb-6 shrink-0 lg:mb-0 lg:w-1/2 lg:flex-none">
-                <div class="text-sm leading-normal text-center text-slate-500 lg:text-left">
-                    ©
-                    <script>
-                        document.write(new Date().getFullYear() + ",");
-
-                    </script>
-                    Sabang Digital Indonesia
+<footer class="footer pt-3  ">
+    <div class="container-fluid">
+        <div class="row align-items-center justify-content-lg-between">
+            <div class="col-lg-6 mb-lg-0 mb-4">
+                <div class="copyright text-center text-sm text-muted text-lg-start">
+                    © <script>
+                        document.write(new Date().getFullYear())
+                    </script>,
+                    <a href="#" class="font-weight-bold" style="color:rgb(88, 88, 198);" target="_blank">Sabang Digital Indonesia</a>
                 </div>
             </div>
         </div>

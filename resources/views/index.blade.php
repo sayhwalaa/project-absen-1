@@ -98,7 +98,19 @@
     </script>
 </head>
 
-<body class="m-0 font-sans antialiased font-normal bg-white text-start text-base leading-default text-slate-500">
+<style>
+    #bg {
+/* From https://css.glass */
+background: rgba(9, 70, 239, 0.41);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(15.9px);
+-webkit-backdrop-filter: blur(15.9px);
+border: 1px solid rgba(9, 70, 239, 0.07);
+    }
+</style>
+
+<body class="m-0 font-sans antialiased font-normal bg-amber-100 text-start text-base leading-default text-slate-500">
     <noscript>
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKDMSK6" height="0" width="0"
             style="display:none;visibility:hidden">
@@ -152,7 +164,7 @@
                                 <h4 class="z-20 font-bold text-black">Wellcome to E-Absen</h4>
                                 <img src="{{ asset('/SBAdmin/login/img/sabang.png') }}" alt="" class="z-20">
                                 <span
-                                    class="absolute top-0 left-0 w-full h-full bg-center bg-cover bg-blue-500"></span>
+                                    class="absolute top-0 left-0 w-full h-full bg-center" id="bg"></span>
                             </div>
                         </div>
                     </div>
