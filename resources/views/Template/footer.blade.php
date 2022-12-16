@@ -6,7 +6,7 @@
                     © <script>
                         document.write(new Date().getFullYear())
                     </script>,
-                    <a href="#" class="font-weight-bold" style="color:rgb(88, 88, 198);" target="_blank">Sabang Digital Indonesia</a>
+                    <a href="#" class="font-weight-bold" style="color:rgb(88, 88, 198);">Sabang Digital Indonesia</a>
                 </div>
             </div>
         </div>

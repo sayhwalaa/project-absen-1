@@ -162,7 +162,7 @@ border: 1px solid rgba(9, 70, 239, 0.07);
                             <div
                                 class="relative flex flex-col justify-center h-full bg-cover px-24 m-4 overflow-hidden rounded-xl ">
                                 <h4 class="z-20 font-bold text-black">Wellcome to E-Absen</h4>
-                                <img src="{{ asset('/SBAdmin/login/img/sabang.png') }}" alt="" class="z-20">
+                                <img src="{{ asset('/img/sabang.png') }}" alt="" class="z-20">
                                 <span
                                     class="absolute top-0 left-0 w-full h-full bg-center" id="bg"></span>
                             </div>
