@@ -7,7 +7,7 @@ class penggunaController extends Controller
 {
     public function index(){
         $pengguna = Pengguna::select('*')
-        ->get();
+        ->paginate(5);
         return view('pengguna.home', ['pengguna' => $pengguna]);
     }
 

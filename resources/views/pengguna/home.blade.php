@@ -1,113 +1,291 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 @include('Template.head')
 
-<body
-    class="m-0 font-sans text-base antialiased font-normal dark:bg-slate-900 leading-default bg-gray-50 text-slate-500">
-    <div class="absolute w-full bg-blue-500 dark:hidden min-h-75"></div>
+<body class="g-sidenav-show bg-gray-100">
+    <div class="min-height-300 bg-primary position-absolute w-100"></div>
     @include('Template.sidebar')
-
-    <main class="relative h-full max-h-screen transition-all duration-200 ease-in-out xl:ml-68 rounded-xl">
-        
+    <main class="main-content position-relative border-radius-lg ">
+        <!-- Navbar -->
         @include('Template.navbar')
-        <!-- cards -->
-        <div class="w-full px-6 py-6 mx-auto">
-            <!-- row 1 -->
-            <div class="flex flex-wrap -mx-3">
-                <!-- card1 -->
-                <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-1/4">
-                    <div class="flex-none max-w-full px-3">
-                        <button type="button" class="hidden px-8 py-3 font-bold leading-normal text-center text-white align-middle transition-all ease-in border-0 rounded-lg shadow-md cursor-pointer text-xs bg-slate-700 lg:block tracking-tight-rem hover:shadow-xs hover:-translate-y-px active:opacity-85">Tambah Data</button>
-                    </div>
+        <!-- End Navbar -->
 
-                </div>
-
-
-            <div class="w-full px-6 py-6 mx-auto">
-                <div class="flex flex-wrap -mx-3">
-                    <div class="flex-none w-full max-w-full px-3">
-                        <div
-                            class="relative flex flex-col min-w-0 mb-6 break-words bg-white border-0 border-transparent border-solid shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
-                            <div class="p-6 pb-0 mb-0 border-b-0 border-b-solid rounded-t-2xl border-b-transparent">
-                                <h6 class="dark:text-white">Pengguna Sabang Digital Indonesia</h6>
-                            </div>
-                            <div class="flex-auto px-0 pt-0 pb-2">
-                                <div class="p-0 overflow-x-auto">
-                                    <table
-                                        class="items-center w-full mb-0 align-top border-collapse dark:border-white/40 text-slate-500">
-                                        <thead class="align-bottom">
-                                            <tr>
-                                                <th
-                                                    class="px-6 py-3 font-bold text-left uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
-                                                    No</th>
-                                                <th
-                                                    class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
-                                                    Nama</th>
-                                                <th
-                                                    class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
-                                                    Email</th>
-                                                <th
-                                                    class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
-                                                    Jabatan</th>
-                                                <th
-                                                    class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
-                                                    Aksi</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @php
-                                        $no = 1;
-                                        @endphp
-                                        @foreach($pengguna as $index => $p)
-                                            <tr>
-                                                <td
-                                                    class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
-                                                    <div class="flex px-2 py-1">
-                                                        <div class="flex flex-col justify-center">
-                                                            <h6 class="mb-0 text-xs leading-normal dark:text-white">{{$no++}}</h6>
-                                                        </div>
-                                                    </div>
-                                                </td>
-
-                                                <td
-                                                    class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
-                                                    <p
-                                                        class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-80">
-                                                        {{$p->nama}}</p>
-                                                </td>
-                                                
-                                                <td
-                                                    class="p-2 text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
-                                                    <span
-                                                        class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400">{{$p->email}}</span>
-                                                </td>
-                                                
-                                                <td
-                                                    class="p-2 text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
-                                                    <span
-                                                        class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400">{{$p->jabatan}}</span>
-                                                </td>
-                                                <td
-                                                    class="p-2 text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
-                                                    <a class="inline-block dark:text-white px-4 py-2.5 mb-0 font-bold text-center align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer leading-normal text-sm ease-in bg-150 hover:-translate-y-px active:opacity-85 bg-x-25 text-slate-700" href="javascript:;"><i class="mr-2 fas fa-pencil-alt text-slate-700" aria-hidden="true"></i>Edit</a>
-                                                    <a class="relative z-10 inline-block px-4 py-2.5 mb-0 font-bold text-center text-transparent align-middle transition-all border-0 rounded-lg shadow-none cursor-pointer leading-normal text-sm ease-in bg-150 bg-gradient-to-tl from-red-600 to-orange-600 hover:-translate-y-px active:opacity-85 bg-x-25 bg-clip-text" href="javascript:;"><i class="mr-2 far fa-trash-alt bg-150 bg-gradient-to-tl from-red-600 to-orange-600 bg-x-25 bg-clip-text"></i>Delete</a>
-                                                </td>
-                                                
-                                            </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
+        <div class="container-fluid py-4">
+            <div class="col-6">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#tambahModal">
+                    <button class="btn bg-gradient-dark mb-3">Tambah Data</button>
+                </a>
+            </div>
+            {{-- modal tambah data --}}
+            <div class="modal fade" id="tambahModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Pendaftaran Pengguna</h5>
+                            <button class="btn-close bg-danger" type="button" data-bs-dismiss="modal"
+                                aria-label="Close">
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="{{ route('pengguna.simpanPengguna'); }}" method="POST">
+                                @csrf
+                                <div class='mb-3'>
+                                    <label for="nip" class="form-label">NIP</label>
+                                    <input required type="number" name="nip" id="nip" value="{{ old("nip") }}"
+                                        class="form-control @error('nip') is-invalid @enderror">
+                                    @error('nip')
+                                    <div class='text-danger'>{{ $message }}</div>
+                                    @enderror
                                 </div>
-                            </div>
+
+                                <div class="mb-3">
+                                    <label for="nama" class="form-label">Nama Lengkap</label>
+                                    <input required type="text" name="nama" id="nama" value="{{ old('nama') }}"
+                                        class="form-control @error('nama') is-invalid @enderror">
+                                    @error('nama')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input required type="email" name="email" id="email"
+                                        value="{{ old('email') }}"
+                                        class="form-control @error('email') is-invalid @enderror">
+                                    @error('email')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="tglLahir" class="form-label">Tanggal Lahir</label>
+                                    <input required type="date" name="tglLahir" id="tglLahir"
+                                        value="{{ old('tglLahir') }}"
+                                        class="form-control @error('tglLahir') is-invalid @enderror">
+                                    @error('tglLahir')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="alamat" class="form-label">Alamat</label>
+                                    <input required type="tel" name="alamat" id="alamat" value="{{ old('alamat') }}"
+                                        class="form-control @error('alamat') is-invalid @enderror">
+                                    @error('alamat')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="noHp" class="form-label">Nomor Hp</label>
+                                    <input required type="tel" name="noHp" id="noHp" value="{{ old('noHp') }}"
+                                        class="form-control @error('noHp') is-invalid @enderror">
+                                    @error('noHp')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="jabatan" class="form-label">Jabatan</label>
+                                    <input required type="text" name="jabatan" id="jabatan" value="{{ old('jabatan') }}"
+                                        class="form-control @error('jabatan') is-invalid @enderror">
+                                    @error('jabatan')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="cabang" class="form-label">Cabang</label>
+                                    <select name="cabang" id="cabang" class="form-control" value="{{ old('cabang') }}">
+                                        <option>-- Pilih Cabang --</option>
+                                        <option value="Pontianak" {{ old('cabang')=='Pontianak' ? 'selected' : '' }}>
+                                            Pontianak
+                                        </option>
+                                        <option value="Jakarta" {{ old('cabang')=='Jakarta' ? 'selected' : '' }}>Jakarta
+                                        </option>
+                                        <option value="Papua" {{ old('cabang')=='Papua' ? 'selected' : '' }}>
+                                            Papua</option>
+                                        <option value="Jawa Barat" {{ old('cabang')=='Jawa Barat' ? 'selected' : '' }}>
+                                            Jawa Barat
+                                        </option>
+                                    </select>
+                                    @error('cabang')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                                <div style="float: right">
+                                    <button type="submit" class="btn btn-primary mb-2">Daftar</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
-                @include('Template.footer')
             </div>
-            <!-- end cards -->
+            {{-- end modal tambah data --}}
+            <div class="row">
+                <div class="col-12">
+                    <div class="card mb-4">
+                        <div class="card-header pb-0">
+                            <h6>Data Pengguna</h6>
+                        </div>
+                        <div class="card-body px-0 pt-0 pb-2">
+                            <div class="table-responsive p-0">
+                                <table class="table align-items-center mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th
+                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                No</th>
+                                            <th
+                                                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Nama</th>
+                                            <th
+                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2 text-center">
+                                                Email</th>
+                                            <th
+                                                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Jabatan</th>
+                                            <th
+                                                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach($pengguna as $key => $p)
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex px-2 py-1">
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <h6 class="px-2 mb-0 text-xs">{{$pengguna->firstItem()+$key}}
+                                                        </h6>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="align-middle text-center text-sm">
+                                                <span class="text-xs font-weight-bold mb-0">{{$p->nama}}</span>
+                                            </td>
+                                            <td class="align-middle text-center text-sm">
+                                                <span class="text-xs font-weight-bold mb-0">{{$p->email}}</span>
+                                            </td>
+                                            <td class="align-middle text-center">
+                                                <span
+                                                    class="text-secondary text-xs font-weight-bold">{{$p->jabatan}}</span>
+                                            </td>
+                                            <td class="align-middle text-center">
+                                                <a href="#" data-bs-toggle="modal"
+                                                    data-bs-target=" #editModal-{{$p->id}}">
+                                                    <button class="btn btn-warning">
+                                                        <i class="fa fa-edit"></i>
+                                                    </button>
+                                                </a>
+                                                <a href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#deleteModal-{{ $p->id }}">
+                                                    <button class="btn btn-danger">
+                                                        <i class="fa fa-trash"></i></button>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+
+                                {{-- modal edit data --}}
+                                @foreach($pengguna as $p)
+                                <div class="modal fade" id="editModal-{{$p->id}}" aria-labelledby="exampleModalLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog modal-lg" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Edit Pengguna</h5>
+                                                <button class="btn-close bg-danger" type="button"
+                                                    data-bs-dismiss="modal" aria-label="Close">
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form action="/pengguna/update/{{ $p->id }}" method="POST">
+                                                    @csrf
+                                                    <div class="mb-3">
+                                                        <label for="nama" class="form-label">Nama</label>
+                                                        <input type="nama" name="nama" id="nama"
+                                                            value="{{ old('nama') ?? $p->nama }}"
+                                                            class="form-control @error('nama') is-invalid @enderror">
+                                                        @error('nama')
+                                                        <div class="text-danger">{{ $message }}</div>
+                                                        @enderror
+                                                    </div>
+
+                                                    <div class="mb-3">
+                                                        <label for="email" class="form-label">Email</label>
+                                                        <input type="email" name="email" id="email"
+                                                            value="{{ old('email') ?? $p->email }}"
+                                                            class="form-control @error('email') is-invalid @enderror">
+                                                        @error('email')
+                                                        <div class="text-danger">{{ $message }}</div>
+                                                        @enderror
+                                                    </div>
+
+                                                    <div class="mb-3">
+                                                        <label for="jabatan" class="form-label">Jabatan</label>
+                                                        <input type="text" name="jabatan" id="jabatan"
+                                                            value="{{ old('jabatan') ?? $p->jabatan }}"
+                                                            class="form-control @error('jabatan') is-invalid @enderror">
+                                                        @error('jabatan')
+                                                        <div class="text-danger">{{ $message }}</div>
+                                                        @enderror
+                                                    </div>
+
+                                                    <div style="float: right">
+                                                        <button type="submit"
+                                                            class="btn btn-primary mb-2">Update</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                @endforeach
+                                {{-- end modal edit data --}}
+
+                                <!-- Delete Modal-->
+                                @foreach($pengguna as $p)
+                                <div class="modal fade" id="deleteModal-{{ $p->id }}"
+                                    aria-labelledby="exampleModalLabel{{ $p->id }}" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content" style="padding: 15px">
+                                            <div class="modal-body">Hapus data {{$p->nama }} ?</div>
+                                            <div style="margin-right: 10px;">
+                                                <a class="btn btn-danger" href="/pengguna/delete/{{$p->id}}"
+                                                    style="float: right">Hapus</a>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+            .page-item .page-link {
+                color: black;
+                border: 1px rgba(43, 41, 41, 0.5);
+            }
+
+        </style>
+        <div class="page" style="margin-left:75%; color:white;">
+            {{$pengguna->links()}}
+        </div>
+        {{-- footer --}}
+        @include('Template.footer')
+        {{-- end footer --}}
+        </div>
     </main>
-    @include('Template.setting')
+    <!--   Core JS Files   -->
+    @include('Template.script')
 </body>
-@include('Template.script')
+
 </html>

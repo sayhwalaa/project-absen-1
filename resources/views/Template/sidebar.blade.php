@@ -4,8 +4,7 @@
         <div class="sidenav-header">
             <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
                 aria-hidden="true" id="iconSidenav"></i>
-            <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/argon-dashboard/pages/dashboard.html "
-                target="_blank">
+            <a class="navbar-brand m-0" href="#">
                 <img src="/sabang.png" class="navbar-brand-img h-100" alt="main_logo">
                 <span class="ms-0 font-weight-bold">Sabang Digital Indonesia</span>
             </a>
@@ -22,16 +21,6 @@
                         <span class="nav-link-text ms-1">Dashboard</span>
                     </a>
                 </li>
-                <!-- Nav Item - Pages Collapse Menu -->
-                {{-- <li class="nav-item">
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
-                        aria-controls="collapseTwo">
-                        <i class="fas fa-fw fa-cog"></i>
-                        <span>Master Data</span>
-                    </a>
-                    
-                </li> --}}
-
                 <li class="nav-item">
                     <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
                     aria-controls="collapseTwo">
@@ -63,22 +52,6 @@
                         
                     </ul>
                 </li>
-                {{-- <li class="nav-item">
-                    <a class="nav-link " href="/pegawai">
-                        <div
-                            class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="ni ni-app text-info text-sm opacity-10"></i>
-                        </div>
-                        <span class="nav-link-text ms-1">Pegawai</span>
-                    </a>
-                    <a class="nav-link " href="#">
-                        <div
-                            class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="ni ni-app text-info text-sm opacity-10"></i>
-                        </div>
-                        <span class="nav-link-text ms-1">Pengguna</span>
-                    </a>
-                </li> --}}
             </ul>
         </div>
     </aside>
