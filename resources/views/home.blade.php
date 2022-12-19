@@ -12,7 +12,7 @@
        <!-- Navbar -->
         {{-- @include('Template.navbar') --}}
         <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur"
-    data-scroll="false">
+        data-scroll="false">
     <div class="ms-md-auto pe-md-3 d-flex align-items-center">
         <form method="get">
         <div class="input-group">
@@ -43,11 +43,7 @@
                         </div>
                     </a>
                 </li>
-                <li class="nav-item px-3 d-flex align-items-center">
-                    <a href="javascript:;" class="nav-link text-white p-0">
-                        <i class="fa fa-cog fixed-plugin-button-nav cursor-pointer"></i>
-                    </a>
-                </li>
+               
             </ul>
 
     <!-- Logout Modal-->
