@@ -12,7 +12,16 @@
        <!-- Navbar -->
         @include('Template.navbar')
         <!-- End Navbar -->
+       
         <div class="container-fluid py-4">
+            <div class="col-md-12">
+                @if(session()->has('success'))
+                <div class="alert alert-success" style="color:white;">
+                    {{ session()->get('success')}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                @endif
+            </div>
             <div class="row">
                 <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
                     <div class="card">
