@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\PenggunaController;
+use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\LinkController;
 use App\Http\Controllers\AuthController;
 
@@ -41,3 +42,12 @@ Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
 Route::post('/logout', [AuthController::class, 'logout'])->name('auth.logout');
 
 Route::get('/coba/{nama}', [LinkController::class, 'index'])->name('link.index');
+
+
+//Route Profil
+Route::group(['middleware' => ['auth']], function() {
+Route::get('/profil', [ProfilController::class, 'index']);
+Route::get('/profil/create', [ProfilController::class, 'create'])->name('profil.create');
+    
+});
+    
