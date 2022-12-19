@@ -12,8 +12,104 @@
 
         <div class="container-fluid py-4">
             <div class="col-6">
-                <a class="btn bg-gradient-dark mb-4" href="#">Tambah Data</a>
+                <a href="#" data-bs-toggle="modal" data-bs-target="#tambahModal">
+                    <button class="btn bg-gradient-dark mb-3">Tambah Data</button>
+                </a>
             </div>
+            {{-- modal tambah data --}}
+            <div class="modal fade" id="tambahModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Pendaftaran Pegawai</h5>
+                            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close">
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="{{ route('pegawai.simpanPegawai'); }}" method="POST">
+                                @csrf
+                                <div class='mb-3'>
+                                    <label for="nip" class="form-label">NIP</label>
+                                    <input required type="number" name="nip" id="nip" value="{{ old("nip") }}"
+                                        class="form-control @error('nip') is-invalid @enderror">
+                                    @error('nip')
+                                    <div class='text-danger'>{{ $message }}</div>
+                                    @enderror
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="nama" class="form-label">Nama Lengkap</label>
+                                    <input required type="text" name="nama" id="nama" value="{{ old('nama') }}"
+                                        class="form-control @error('nama') is-invalid @enderror">
+                                    @error('nama')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="tglLahir" class="form-label">Tanggal Lahir</label>
+                                    <input required type="date" name="tglLahir" id="tglLahir"
+                                        value="{{ old('tglLahir') }}"
+                                        class="form-control @error('tglLahir') is-invalid @enderror">
+                                    @error('tglLahir')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="noHp" class="form-label">Nomor Hp</label>
+                                    <input required type="tel" name="noHp" id="noHp" value="{{ old('noHp') }}"
+                                        class="form-control @error('noHp') is-invalid @enderror">
+                                    @error('noHp')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="jabatan" class="form-label">Jabatan</label>
+                                    <input required type="text" name="jabatan" id="jabatan"
+                                        value="{{ old('jabatan') }}"
+                                        class="form-control @error('jabatan') is-invalid @enderror">
+                                    @error('jabatan')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+
+                                <div class='mb-3'>
+                                    <label for="alamat" class="form-label">Alamat</label>
+                                    <textarea class="form-control" name="alamat" id="alamat"
+                                        rows="3">{{ old('alamat') }}</textarea>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="cabang" class="form-label">Cabang</label>
+                                    <select name="cabang" id="cabang" class="form-control"
+                                        value="{{ old('cabang') }}">
+                                        <option>-- Pilih Cabang --</option>
+                                        <option value="Pontianak"
+                                            {{ old('cabang')=='Pontianak' ? 'selected' : '' }}>Pontianak
+                                        </option>
+                                        <option value="Jakarta"
+                                            {{ old('cabang')=='Jakarta' ? 'selected' : '' }}>Jakarta</option>
+                                        <option value="Papua" {{ old('cabang')=='Papua' ? 'selected' : '' }}>
+                                            Papua</option>
+                                        <option value="Jawa Barat"
+                                            {{ old('cabang')=='Jawa Barat' ? 'selected' : '' }}>Jawa Barat
+                                        </option>
+                                    </select>
+                                    @error('cabang')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                                <div>
+                                    <button type="submit" class="btn btn-primary mb-2">Daftar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                {{-- end modal tambah data --}}
             <div class="row">
                 <div class="col-12">
                     <div class="card mb-4">
