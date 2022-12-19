@@ -124,14 +124,15 @@
                                                     </button>
                                                 </a>
                                                 <a href="#" data-bs-toggle="modal" data-bs-target="#deleteModal-{{ $p->id }}">
-                                                    <button class="btn btn-danger btn-circle"><i
-                                                        class="fa fa-trash"></i></button>
+                                                    <button class="btn btn-danger btn-circle">
+                                                        <i class="fa fa-trash"></i></button>
                                                 </a>
                                             </td>
                                         </tr>
                                         @endforeach
                                     </tbody>
                                 </table>
+                                
                                 {{-- modal edit data --}}
                                 @foreach($pegawai as $p)
                                 <div class="modal fade" id="editModal-{{$p->id}}" aria-labelledby="exampleModalLabel"
@@ -143,7 +144,7 @@
                                                 <button class="btn-close bg-primary" type="button" data-bs-dismiss="modal" aria-label="Close">
                                                 </button>
                                             </div>
-                                            <div class="modal-body">
+                                            <div class="modal-body">    
                                                 <form action="/pegawai/update/{{ $p->id }}" method="POST">
                                                     
                                                     @csrf
