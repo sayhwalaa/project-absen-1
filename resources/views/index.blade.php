@@ -15,7 +15,14 @@
                   <h4 class="font-weight-bolder">Sign In</h4>
                   <p class="mb-0">Enter your email and password to sign in</p>
                 </div>
+                
                 <div class="card-body">
+                  @if (session()->has('error'))
+                <div class="alert alert-danger alert-dismissible fade show text-start" role="alert" style="color:white;">
+                    {{ session()->get('error') }}
+                    <button type="button" class="btn-close " data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                @endif
                   <form role="form"  action="{{ route('auth.login') }}" method="post">
                     @csrf
                     <div class="mb-3">
@@ -32,7 +39,7 @@
                 <div class="card-footer text-center pt-0 px-lg-2 px-1">
                   <p class="mb-4 text-sm mx-auto">
                     Don't have an account?
-                    <a href="javascript:;" class="text-primary text-gradient font-weight-bold">Sign up</a>
+                    <a href="#" class="text-primary text-gradient font-weight-bold">Sign up</a>
                   </p>
                 </div>
               </div>

@@ -48,7 +48,7 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLabel">Pendaftaran Pegawai</h5>
-                            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close">
+                            <button class="btn-close bg-danger" type="button" data-bs-dismiss="modal" aria-label="Close">
                             </button>
                         </div>
                         <div class="modal-body">
@@ -127,7 +127,7 @@
                                     <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
-                                <div>
+                                <div style="float: right">
                                     <button type="submit" class="btn btn-primary mb-2">Daftar</button>
                                 </div>
                             </form>
@@ -168,9 +168,6 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @php
-                                        $no = 1;
-                                        @endphp
                                         @foreach($pegawai as $key => $p)
                                         <tr>
                                             <td>
@@ -227,7 +224,7 @@
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h5 class="modal-title" id="exampleModalLabel">Edit Pegawai</h5>
-                                                <button class="btn-close bg-primary" type="button" data-bs-dismiss="modal" aria-label="Close">
+                                                <button class="btn-close bg-danger" type="button" data-bs-dismiss="modal" aria-label="Close">
                                                 </button>
                                             </div>
                                             <div class="modal-body">    
@@ -290,7 +287,7 @@
                                                         @enderror
                                                     </div>
 
-                                                    <div>
+                                                    <div style="float: right">
                                                         <button type="submit" class="btn btn-primary mb-2">Update</button>
                                                     </div>
                                                 </form>
@@ -335,9 +332,6 @@
             {{-- end footer --}}
         </div>
     </main>
-    {{-- setting --}}
-    @include('Template.setting')
-    {{-- end setting --}}
     <!--   Core JS Files   -->
     @include('Template.script')
 </body>
