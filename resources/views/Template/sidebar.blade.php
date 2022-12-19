@@ -22,15 +22,6 @@
                         <span class="nav-link-text ms-1">Dashboard</span>
                     </a>
                 </li>
-                <!-- Nav Item - Pages Collapse Menu -->
-                {{-- <li class="nav-item">
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
-                        aria-controls="collapseTwo">
-                        <i class="fas fa-fw fa-cog"></i>
-                        <span>Master Data</span>
-                    </a>
-                    
-                </li> --}}
 
                 <li class="nav-item">
                     <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
