@@ -265,27 +265,20 @@
                                 </div>
                                 @endforeach
                                 {{-- end modal edit data --}}
+
                                 <!-- Delete Modal-->
                                 @foreach($pegawai as $p)
                                 <div class="modal fade" id="deleteModal-{{ $p->id }}"
                                     aria-labelledby="exampleModalLabel{{ $p->id }}" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel{{ $p->id }}">Konfirmasi
-                                                    hapus</h5>
-                                                    <button type="button" class="btn-close bg-primary" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        <div class="modal-content" style="padding: 15px">
+                                            <div class="modal-body">Hapus data {{$p->nama }} ?</div>
+                                            <div style="margin-right: 10px;">
+                                            <a class="btn btn-danger" href="/pegawai/delete/{{$p->id}}" style="float: right">Hapus</a>
                                             </div>
-                                            <div class="modal-body">
-                                                <tr>
-                                                    <td>Yakin Menghapus</td>
-                                                    <td>{{ $p->nama }}?</td>
-                                                </tr>
-                                                <br>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <a class="btn btn-danger" href="/pegawai/delete/{{$p->id}}">Hapus</a>
-                                            </div>
+                                        </div>
+                                        
+                                            
                                         </div>
                                     </div>
                                 </div>
