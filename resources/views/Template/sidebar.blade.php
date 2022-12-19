@@ -22,16 +22,33 @@
                         <span class="nav-link-text ms-1">Dashboard</span>
                     </a>
                 </li>
+                <!-- Nav Item - Pages Collapse Menu -->
+                {{-- <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                        aria-controls="collapseTwo">
+                        <i class="fas fa-fw fa-cog"></i>
+                        <span>Master Data</span>
+                    </a>
+                    
+                </li> --}}
+
                 <li class="nav-item">
-                    <a class="nav-link " href=#">
+                    <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
+                    aria-controls="collapseTwo">
                         <div
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-app text-info text-sm opacity-10"></i>
                         </div>
                         <span class="nav-link-text ms-1">Master Data</span>
                     </a>
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <a class="collapse-item" href="/pengguna">Pengguna</a>
+                            <a class="collapse-item" href="/pegawai">Pegawai</a>
+                        </div>
+                    </div>
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link " href="/pegawai">
                         <div
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
@@ -39,8 +56,6 @@
                         </div>
                         <span class="nav-link-text ms-1">Pegawai</span>
                     </a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link " href="#">
                         <div
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
@@ -48,7 +63,7 @@
                         </div>
                         <span class="nav-link-text ms-1">Pengguna</span>
                     </a>
-                </li>
+                </li> --}}
             </ul>
         </div>
     </aside>

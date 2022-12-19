@@ -119,12 +119,12 @@
                                             </td>
                                             <td class="align-middle text-center">
                                                 <a href="#" data-bs-toggle="modal" data-bs-target=" #editModal-{{$p->id}}">
-                                                    <button class="btn btn-warning btn-circle">
+                                                    <button class="btn btn-warning btn-sm btn-circle">
                                                         <i class="fa fa-edit"></i>
                                                     </button>
                                                 </a>
                                                 <a href="#" data-bs-toggle="modal" data-bs-target="#deleteModal-{{ $p->id }}">
-                                                    <button class="btn btn-danger btn-circle"><i
+                                                    <button class="btn btn-danger btn-sm"><i
                                                         class="fa fa-trash"></i></button>
                                                 </a>
                                             </td>
@@ -245,8 +245,8 @@
             </div>
             <style>
                 .page-item .page-link{
-                    color: white;
-                    border: 1px solid rgba(43, 41, 41, 0.5);
+                    color: black;
+                    border: 1px rgba(43, 41, 41, 0.5);
                 }
             </style>
             <div class="page" style="margin-left:75%; color:white;">
