@@ -14,7 +14,7 @@
         <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" href="/home">
+                    <a class="nav-link" href="/home">
                         <div
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
@@ -41,12 +41,27 @@
                         </div>
                         <span class="nav-link-text ms-1">Master Data</span>
                     </a>
-                    <div id="collapseOne" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                        <div class="bg-white py-2 collapse-inner rounded">
-                            <a class="collapse-item" href="/pengguna">Pengguna</a>
-                            <a class="collapse-item" href="/pegawai">Pegawai</a>
-                        </div>
-                    </div>
+                    <ul class="collapse flex-column ms-1" style="list-style: none; margin-top:-10px;" id="collapseOne" data-bs-parent="#menu">
+                        <li style="margin-left: -30px;">
+                            <a href="/pegawai" class="nav-link">
+                                <div
+                            class="icon icon-shape icon-sm border-radius-md text-center d-flex align-items-center justify-content-center">
+                            <i class="ni ni-app text-info text-sm opacity-10"></i>
+                            </div>
+                                <span class="d-none nav-link d-sm-inline">Pegawai</span>
+                            </a>
+                        </li>
+                        <li style="margin-left: -30px; margin-top:-20px;">
+                            <a href="/pengguna" class="nav-link">
+                                <div
+                            class="icon icon-shape icon-sm border-radius-md text-center d-flex align-items-center justify-content-center">
+                            <i class="ni ni-app text-info text-sm opacity-10"></i>
+                            </div>
+                                <span class="d-none nav-link d-sm-inline">Pengguna</span>
+                            </a>
+                        </li>
+                        
+                    </ul>
                 </li>
                 {{-- <li class="nav-item">
                     <a class="nav-link " href="/pegawai">
