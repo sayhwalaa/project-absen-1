@@ -9,7 +9,7 @@
     @include('Template.sidebar')
     {{-- end sidebar --}}
     <main class="main-content position-relative border-radius-lg ">
-       <!-- Navbar -->
+        <!-- Navbar -->
         {{-- @include('Template.navbar') --}}
         <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur"
         data-scroll="false">
@@ -24,14 +24,13 @@
     <div class="container-fluid py-1 px-3">
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
             <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-               
             </div>
             <ul class="navbar-nav  justify-content-end">
                 <li class="nav-item d-flex align-items-center">
                     <a href="#" data-bs-toggle="modal" data-bs-target="#logoutModal">
                     <button type="button" class="btn btn-danger mt-3" >
                         Logout
-                      </button>
+                    </button>
                     </a>
                 </li>
                 <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
@@ -43,7 +42,6 @@
                         </div>
                     </a>
                 </li>
-               
             </ul>
 
     <!-- Logout Modal-->
@@ -69,9 +67,7 @@
     </div>
 </nav>
 
-
         <!-- End Navbar -->
-       
         <div class="container-fluid py-4">
             <div class="col-md-12">
                 @if(session()->has('success'))
